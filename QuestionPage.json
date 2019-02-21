@@ -1,0 +1,98 @@
+{
+    "type": "APL",
+    "version": "1.0",
+    "theme": "dark",
+    "import": [
+        {
+            "name":"alexa-viewport-profiles",
+            "version":"1.0.0"
+        }
+        ],
+    "resources": [],
+    "styles": {},
+    "layouts": {},
+    "mainTemplate": {
+        "parameters": [
+            "datasource"
+        ],
+        "items": [
+            {
+                "type":"Container",
+                "width":"100vw",
+                "height":"100vh",
+                "justifyContent":"spaceAround",
+                "items":[
+                    {
+                        "type":"Image",
+                        "width":"100vw",
+                        "height":"100vh",
+                        "position":"absolute",
+                        "source":"https://s3-ap-northeast-1.amazonaws.com/who-am-i-skill/backgroundImage.jpg",
+                        "scale":"best-fill"
+                        
+                    },
+                    {
+                        
+                        "when":"${@viewportProfile == @hubLandscapeMedium || @viewportProfile == @hubLandscapeLarge || @viewportProfile == @tvLandscapeXLarge}",
+                        "type":"Frame",
+                        "width":"96vw",
+                        "height":"96vh",
+                        "position":"absolute",
+                        "left":"2vw",
+                        "borderWidth":"1vw",
+                        "borderColor":"white"
+                    },
+                    {
+                        "when":"${@viewportProfile == @hubLandscapeMedium || @viewportProfile == @hubLandscapeLarge || @viewportProfile == @tvLandscapeXLarge}",
+                        "type":"Text",
+                        "text":"${datasource.quizData.questionNumber}",
+                        "width":"80vw",
+                        "height":"30vh",
+                        "alignSelf":"center",
+                        "textAlign":"center",
+                        "textAlignVertical":"center",
+                        "fontWeight":"200",
+                        "fontSize":"10vw"
+                    },
+                    {
+                        "when":"${@viewportProfile == @hubLandscapeMedium || @viewportProfile == @hubLandscapeLarge || @viewportProfile == @tvLandscapeXLarge}",
+                        "type":"Text",
+                        "text":"${datasource.quizData.question}",
+                        "width":"80vw",
+                        "height":"70vh",
+                        "alignSelf":"center",
+                        "textAlign":"center",
+                        "textAlignVertical":"center",
+                        "fontWeight":"200",
+                        "fontSize":"6vw"
+                    },
+                    {
+                        "when":"${@viewportProfile == @hubRoundSmall}",
+                        "type":"Frame",
+                        "width":"97vw",
+                        "height":"97vh",
+                        "position":"absolute",
+                        "left":"1.5vw",
+                        "borderWidth":"1vw",
+                        "borderColor":"white",
+                        "borderRadius":"50vw",
+                        "items":[
+                            {
+                                "type":"Text",
+                                "text":"${datasource.quizData.question}",
+                                "width":"100vw",
+                                "height":"100vh",
+                                "textAlign":"center",
+                                "textAlignVertical":"center",
+                                "fontWeight":"200",
+                                "fontSize":"7vw",
+                                "paddingLeft":"4vw",
+                                "paddingRight":"4vw"
+                            }
+                        ]
+                    }
+                    ]
+            }
+            ]
+    }
+}

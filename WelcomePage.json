@@ -1,0 +1,102 @@
+{
+    "type": "APL",
+    "version": "1.0",
+    "theme": "dark",
+    "import": [
+        {
+            "name":"alexa-viewport-profiles",
+            "version":"1.0.0"
+        }
+        ],
+    "resources": [],
+    "styles": {},
+    "layouts": {},
+    "mainTemplate": {
+        "parameters": [
+            "datasource"
+        ],
+        "items": [
+            {
+                "type":"Container",
+                "width":"100vw",
+                "height":"100vh",
+                "direction":"column",
+                "items":[
+                    {
+                        "type":"Image",
+                        "source":"https://s3-ap-northeast-1.amazonaws.com/who-am-i-skill/backgroundImage.jpg",
+                        "width":"100vw",
+                        "height":"100vh",
+                        "position":"absolute",
+                        "scale":"best-fill"
+                    },
+                    {
+                        "when":"${@viewportProfile == @hubLandscapeMedium || @viewportProfile == @hubLandscapeLarge || @viewportProfile == @tvLandscapeXLarge}",
+                        "type":"Text",
+                        "text":"Who Am I?",
+                        "height":"20vh",
+                        "width":"100vw",
+                        "textAlign":"center",
+                        "fontWeight":"200",
+                        "fontSize":"15vh",
+                        "textAlignVertical":"center"
+                    },
+                    {
+                            "type":"Frame",
+                            "width":"70vw",
+                            "height":"1vh",
+                            "backgroundColor":"white",
+                            "alignSelf":"center"
+                    },
+                    {
+                        "when":"${@viewportProfile == @hubRoundSmall}",
+                        "type":"Pager",
+                        "id":"pagerComp",
+                        "width":"100vw",
+                        "height":"100vh",
+                        "justifyContent":"center",
+                        "items":[
+                            {
+                                "type":"Text",
+                                "text":"Who Am I?",
+                                "height":"100vh",
+                                "width":"100vw",
+                                "textAlign":"center",
+                                "fontWeight":"200",
+                                "fontSize":"15vh",
+                                "textAlignVertical":"center"
+                            },
+                            {
+                                "type":"Text",
+                                "text":"${datasource.Data.text}",
+                                "height":"100vh",
+                                "width":"100vw",
+                                "paddingLeft":"2vw",
+                                "paddingRight":"2vw",
+                                "textAlign":"center",
+                                "fontWeight":"200",
+                                "fontSize":"8vw",
+                                "textAlignVertical":"center"
+                                
+                            }
+                            ]
+                        
+                    },
+                    {
+                        "when":"${@viewportProfile == @hubLandscapeMedium || @viewportProfile == @hubLandscapeLarge || @viewportProfile == @tvLandscapeXLarge}",
+                        "type":"Text",
+                        "text":"${datasource.Data.text}",
+                        "height":"80vh",
+                        "width":"100vw",
+                        "paddingLeft":"2vw",
+                        "paddingRight":"2vw",
+                        "textAlign":"center",
+                        "fontWeight":"300",
+                        "fontSize":"6vw",
+                        "textAlignVertical":"center"
+                    }
+                    ]
+            }
+            ]
+    }
+}

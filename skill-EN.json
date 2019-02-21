@@ -1,0 +1,103 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "who am i",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": [
+                        "how to say the answer",
+                        "i can't get it",
+                        "hint"
+                    ]
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": [
+                        "don't want to play anymore",
+                        "don't wanna play anymore",
+                        "exit",
+                        "exit the game",
+                        "i quit",
+                        "i don't wanna play anymore",
+                        "end game "
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "answerIntent",
+                    "slots": [
+                        {
+                            "name": "answer",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "the answer is an {answer}",
+                        "answer is a {answer}",
+                        "answer is an {answer}",
+                        "answer is {answer}",
+                        "lets go",
+                        "lets begin ",
+                        "start",
+                        "the {answer}",
+                        " an {answer}",
+                        "is it an {answer}",
+                        "it is an {answer}",
+                        "a {answer}",
+                        "it can be a {answer}",
+                        "is it a {answer}",
+                        "it is a {answer}",
+                        "the answer is  a {answer}",
+                        "I think it is {answer}",
+                        "{answer} is the answer",
+                        "is it {answer}",
+                        "it might be {answer}",
+                        "it is {answer}",
+                        "the answer is {answer}"
+                    ]
+                },
+                {
+                    "name": "DontKnowIntent",
+                    "slots": [],
+                    "samples": [
+                        "next question",
+                        "next",
+                        "next one ",
+                        "i'll skip that one",
+                        "skip",
+                        "don't know",
+                        "answer please",
+                        "can u say the answer",
+                        "i don't know "
+                    ]
+                },
+                {
+                    "name": "AMAZON.RepeatIntent",
+                    "samples": [
+                        "can you repeat",
+                        "can you repeat the question",
+                        "repeat please",
+                        "pardon me",
+                        "pardon",
+                        "repeat the question",
+                        "repeat",
+                        "can u repeat the question"
+                    ]
+                }
+            ],
+            "types": []
+        }
+    }
+}
